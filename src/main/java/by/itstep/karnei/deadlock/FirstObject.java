@@ -1,4 +1,4 @@
-package by.itstep.karnei;
+package by.itstep.karnei.deadlock;
 
 public class FirstObject {
 
