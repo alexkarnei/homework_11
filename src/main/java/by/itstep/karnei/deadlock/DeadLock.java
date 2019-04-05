@@ -1,20 +1,22 @@
 package by.itstep.karnei.deadlock;
 
+import by.itstep.karnei.FirstObject;
+import by.itstep.karnei.SecondObject;
+
 public class DeadLock {
 
     FirstObject firstObject = new FirstObject();
     SecondObject secondObject = new SecondObject();
 
-    DeadLock(){
+    private DeadLock() {
         Thread.currentThread().setName("Main thread");
-        Thread thread = new Thread(this::run,"Rival thread");
+        Thread thread = new Thread(this::run, "Rival thread");
         thread.start();
         firstObject.firstMethod(secondObject);
-
         System.out.println("Back to main thread");
     }
 
-    public void run(){
+    void run() {
         secondObject.firstMethod(firstObject);
     }
 
