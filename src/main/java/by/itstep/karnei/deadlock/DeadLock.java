@@ -5,8 +5,8 @@ import by.itstep.karnei.SecondObject;
 
 public class DeadLock {
 
-    FirstObject firstObject = new FirstObject();
-    SecondObject secondObject = new SecondObject();
+    private FirstObject firstObject = new FirstObject();
+    private SecondObject secondObject = new SecondObject();
 
     private DeadLock() {
         Thread.currentThread().setName("Main thread");
@@ -16,7 +16,7 @@ public class DeadLock {
         System.out.println("Back to main thread");
     }
 
-    void run() {
+    private void run() {
         secondObject.firstMethod(firstObject);
     }
 

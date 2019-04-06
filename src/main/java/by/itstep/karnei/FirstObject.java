@@ -11,7 +11,7 @@ public class FirstObject {
         } catch (InterruptedException e) {
             System.out.println("Class FirstObject interrupted");
         }
-        System.out.println(nameThread+" trying to call FirstObject.secondMethod");
+        System.out.println(nameThread+" trying to call SecondObject.secondMethod");
         secondObject.secondMethod();
     }
     synchronized public void secondMethod(){
