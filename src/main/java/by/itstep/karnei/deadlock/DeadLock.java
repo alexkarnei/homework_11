@@ -7,7 +7,7 @@ public class DeadLock {
                 new Friend("Aleksandr");
         final Friend roman =
                 new Friend("Roman");
-        new Thread(() -> aleksandr.lock(roman)).start();
-        new Thread(() -> roman.lock(aleksandr)).start();
+        new Thread(() -> aleksandr.lockFriend(roman)).start();
+        new Thread(() -> roman.lockFriend(aleksandr)).start();
     }
 }
