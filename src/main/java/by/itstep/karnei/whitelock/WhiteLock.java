@@ -5,13 +5,13 @@ import java.util.concurrent.Executors;
 
 public class WhiteLock {
 
-        public static void main(String[] args) {
-            final Friend aleksandr =
-                    new Friend("Aleksandr");
-            final Friend roman =
-                    new Friend("Roman");
-            ExecutorService executorService = Executors.newFixedThreadPool(2);
-            executorService.submit(new LockLoop(aleksandr, roman));
-            executorService.submit(new LockLoop(roman, aleksandr));
-        }
+    public static void main(String[] args) {
+        final Friend aleksandr =
+                new Friend("Aleksandr");
+        final Friend roman =
+                new Friend("Roman");
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        executorService.submit(new LockLoop(aleksandr, roman));
+        executorService.submit(new LockLoop(roman, aleksandr));
     }
+}

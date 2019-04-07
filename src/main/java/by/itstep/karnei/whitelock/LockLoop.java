@@ -1,7 +1,5 @@
 package by.itstep.karnei.whitelock;
 
-import java.util.Random;
-
 public class LockLoop implements Runnable {
     private Friend locker;
     private Friend lockee;
@@ -12,10 +10,9 @@ public class LockLoop implements Runnable {
     }
 
     public void run() {
-        Random random = new Random();
         for (; ; ) {
             try {
-                Thread.sleep(random.nextInt(10));
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
             }
             lockee.lockedFriend(locker);

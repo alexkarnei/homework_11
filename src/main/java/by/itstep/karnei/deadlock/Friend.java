@@ -12,7 +12,7 @@ public class Friend {
         return this.name;
     }
 
-    public synchronized void lockFriend (Friend locker) {
+    public synchronized void lockFriend(Friend locker) {
         System.out.format("%s: %s"
                         + "  has locked to me!%n",
                 this.name, locker.getName());
