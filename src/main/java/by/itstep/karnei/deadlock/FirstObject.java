@@ -1,8 +1,8 @@
-package by.itstep.karnei;
+package by.itstep.karnei.deadlock;
 
 public class FirstObject {
 
-    synchronized  public void firstMethod(SecondObject secondObject) {
+    synchronized public void firstMethod(SecondObject secondObject) {
         String nameThread = Thread.currentThread().getName();
         System.out.println(nameThread + " has entered in method FirstObject.firstMethod");
 
@@ -11,10 +11,11 @@ public class FirstObject {
         } catch (InterruptedException e) {
             System.out.println("Class FirstObject interrupted");
         }
-        System.out.println(nameThread+" trying to call SecondObject.secondMethod");
+        System.out.println(nameThread + " trying to call Second.secondMethod");
         secondObject.secondMethod();
     }
-    synchronized public void secondMethod(){
+
+    synchronized public void secondMethod() {
         System.out.println("In method FirstObject.secondMethod");
     }
 }

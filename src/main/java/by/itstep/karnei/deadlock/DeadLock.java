@@ -1,8 +1,5 @@
 package by.itstep.karnei.deadlock;
 
-import by.itstep.karnei.FirstObject;
-import by.itstep.karnei.SecondObject;
-
 public class DeadLock {
 
     private FirstObject firstObject = new FirstObject();
