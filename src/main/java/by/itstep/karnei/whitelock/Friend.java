@@ -12,19 +12,19 @@ public class Friend extends by.itstep.karnei.deadlock.Friend {
     }
 
 
-    public boolean impendingLock(Friend bower) {
-        Boolean myLock = false;
-        Boolean yourLock = false;
+    public boolean impendingLock(Friend locker) {
+        boolean myLock = false;
+        boolean yourLock = false;
         try {
             myLock = lock.tryLock();
-            yourLock = bower.lock.tryLock();
+            yourLock = locker.lock.tryLock();
         } finally {
             if (!(myLock && yourLock)) {
                 if (myLock) {
                     lock.unlock();
                 }
                 if (yourLock) {
-                    bower.lock.unlock();
+                    locker.lock.unlock();
                 }
             }
         }
