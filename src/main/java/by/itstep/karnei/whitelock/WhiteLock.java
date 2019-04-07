@@ -1,5 +1,8 @@
 package by.itstep.karnei.whitelock;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class WhiteLock {
 
         public static void main(String[] args) {
@@ -7,7 +10,8 @@ public class WhiteLock {
                     new Friend("Aleksandr");
             final Friend roman =
                     new Friend("Roman");
-            new Thread(new LockLoop(aleksandr, roman)).start();
-            new Thread(new LockLoop(roman, aleksandr)).start();
+            ExecutorService executorService = Executors.newFixedThreadPool(2);
+            executorService.submit(new LockLoop(aleksandr, roman));
+            executorService.submit(new LockLoop(roman, aleksandr));
         }
     }
