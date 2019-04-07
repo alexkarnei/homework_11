@@ -12,7 +12,7 @@ public class LockLoop implements Runnable {
     public void run() {
         for (; ; ) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
             }
             lockee.lockedFriend(locker);
