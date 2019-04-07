@@ -20,7 +20,7 @@ public class Friend {
 
     public synchronized void unLock(Friend locker) {
         System.out.format("%s: %s"
-                        + " has locked back to me!%n",
+                        + " has unLocked to me!%n",
                 this.name, locker.getName());
     }
 
