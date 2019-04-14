@@ -11,7 +11,7 @@ public class WhiteLock {
         final Friend roman =
                 new Friend("Roman");
         ExecutorService executorService = Executors.newFixedThreadPool(2);
-        executorService.submit(new LockLoop(aleksandr, roman));
-        executorService.submit(new LockLoop(roman, aleksandr));
+        executorService.execute(new LockLoop(aleksandr, roman));
+        executorService.execute(new LockLoop(roman, aleksandr));
     }
 }
